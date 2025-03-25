@@ -1,14 +1,17 @@
 def apply_operation(base_value, num3, operation):
     """
-    Aplica la operación especificada entre base_value y num3.
-    
+    Applies the specified operation between base_value and num3.
+
     Args:
-        base_value (float): El resultado de (num1 + num2).
-        num3 (float): El número sobre el que se aplicará la operación.
-        operation (str): Operación a realizar ('multiplication', 'addition', 'subtraction', 'division').
-    
+        base_value (float): The sum of num1 and num2.
+        num3 (float): The number to be used in the operation.
+        operation (str): The operation to be performed ('multiplication', 'addition', 'subtraction', 'division').
+
     Returns:
-        float: Resultado de la operación aplicada.
+        float: The result of applying the operation.
+
+    Raises:
+        ValueError: If an invalid operation is provided or if division by zero occurs.
     """
     if operation == "multiplication":
         return base_value * num3
@@ -18,7 +21,7 @@ def apply_operation(base_value, num3, operation):
         return base_value - num3
     elif operation == "division":
         if num3 == 0:
-            raise ValueError("No se puede dividir por cero")
+            raise ValueError("Division by zero is not allowed")
         return base_value / num3
     else:
-        raise ValueError(f"Operación no válida: {operation}")
+        raise ValueError(f"Invalid operation: {operation}")
